@@ -497,7 +497,7 @@ The software development cycle includes stages like requirements gathering, desi
             <div class="slider-tab"></div>
           </div>
           <div class="form-inner">
-            <form action="#" class="login" method="post" onsubmit="return validateFormSignIn()">
+            <form action="#" class="login" method="post" >
               <div class="field">
                 <input type="text" id="comp_name" placeholder="Company Name" required>
               </div>
@@ -526,7 +526,7 @@ The software development cycle includes stages like requirements gathering, desi
               </div>
               <div class="signup-link">Not a member? <a href="">Signup now</a></div>
             </form>
-            <form action="#" method="post" class="signup" onsubmit="return validateFormSignUp()">
+            <form action="#" method="GET" class="signup" >
               <div class="field">
                 <input type="text" id="full_Name" placeholder="Full Name" required>
               </div>
@@ -695,7 +695,7 @@ The software development cycle includes stages like requirements gathering, desi
 <script>
   function validateFormSignUp() {
     var full_Name = document.getElementById("full_Name").value;
-    var emaill = document.getElementById("emaill").value;
+    var emaill = document.getElementById("email1").value;
     var mob1 = document.getElementById("mob1").value;
     var pas1 = document.getElementById("pas1").value;
     var cit1 = document.getElementById("cit1").value;
@@ -708,14 +708,14 @@ The software development cycle includes stages like requirements gathering, desi
     }
 
     // Mobile number validation
-    if (!validateMobileNumber(emaill)) {
-      alert("Please Enter Correct Email....");
+    if (!validateMobileNumber(mob1)) {
+      alert("Please Enter Correct Mobile Number....");
       return false;
     }
 
     // Pincode validation (example: must be 6 digits)
-    if (!/^\d{6}$/.test(mob1)) {
-      alert("Please enter a 10 digit number");
+    if (!/^\d{6}$/.test(pin1)) {
+      alert("Please enter pincode");
       return false;
     }
 
